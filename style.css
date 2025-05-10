@@ -227,6 +227,8 @@ h1 {
 }
 
 .schedule-locations {
+  margin-top: 4em;
+  margin-bottom: 2em;
   display: flex;
   flex-direction: column;
   gap: 1.5em;
