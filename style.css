@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url("images/background.png"); /* Adjust path as needed */
+  background-image: url("images/background.PNG"); /* Adjust path as needed */
   background-repeat: no-repeat;
   background-size: cover; /* or use "contain" for full image without crop */
   background-attachment: scroll; /* ensures it scrolls with the content */
