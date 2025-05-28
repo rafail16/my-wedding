@@ -46,7 +46,19 @@ function createGlitter() {
   const heartColor = isEven ? "#97cbd3" : "#ecd9a3";
 
   // Vary heart size: 12–20px
-  const size = 12 + Math.random() * 8;
+  let baseSize;
+
+  if (window.innerWidth < 480) {
+    // Mobile
+    baseSize = 10 + Math.random() * 16;
+  } else if (window.innerWidth < 1024) {
+    baseSize = 14 + Math.random() * 20;
+  } else {
+    baseSize = 20 + Math.random() * 30;
+  }
+
+  const size = baseSize; // + Math.random() * 16; // slight variation
+
   glitter.style.animationDuration = `${2 + Math.random() * 2}s`;
 
   glitter.innerHTML = `
@@ -66,9 +78,10 @@ function createGlitter() {
   glitterCount++;
   if (glitterCount >= 10) glitterCount = 0;
 }
-
 setInterval(() => {
   for (let i = 0; i < 10; i++) {
-    createGlitter();
+    setTimeout(() => {
+      createGlitter();
+    }, Math.random() * 1500);
   }
 }, 3000);
