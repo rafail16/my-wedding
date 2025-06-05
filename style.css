@@ -175,16 +175,52 @@ h1 {
 
 .schedule-date {
   font-style: italic;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em;
   color: #214a66;
 }
 
 .name-image {
-  max-width: 300px; /* Prevents the image from getting too big */
   width: 100%; /* Makes it responsive */
   height: auto; /* Maintains aspect ratio */
   display: block; /* Removes inline spacing */
   margin: 0 auto 1em; /* Centers it and adds space below */
+}
+
+.name-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1em;
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .name-image {
+    max-width: 250px;
+  }
+  .schedule-date {
+    font-size: 1rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .name-image {
+    max-width: 400px;
+  }
+  .schedule-date {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 769px) {
+  .name-image {
+    max-width: 600px;
+  }
+  .schedule-date {
+    font-size: 1.4rem;
+  }
 }
 
 .timeline {
