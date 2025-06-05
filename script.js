@@ -85,3 +85,30 @@ setInterval(() => {
     }, Math.random() * 1500);
   }
 }, 3000);
+
+// Select popup elements
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+
+// Add click listeners to timeline items
+document.querySelectorAll(".timeline-item").forEach((item) => {
+  console.log("Popup clicked");
+
+  const content = item.querySelector(".timeline-content");
+  const icon = item.querySelector(".timeline-icon img");
+
+  if (content && icon) {
+    content.style.cursor = "pointer";
+    content.addEventListener("click", () => {
+      popupImg.src = icon.src;
+      popup.classList.remove("hidden");
+    });
+  }
+});
+
+// Close popup on any click
+popup.addEventListener("click", () => {
+  console.log("Popup clicked");
+
+  popup.classList.add("hidden");
+});
